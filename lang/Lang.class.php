@@ -1,12 +1,12 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/civdev/lang/AllReportNames.interface.php';
+require_once 'AllReportNames.interface.php';
 final class Lang implements Lang\AllReportNames{
     
     /**
      * Returns the $array_lang comprised of all the specified reports.
      * Includes the basic array_lang by default.
      * Variable argument lengths.
-     * First argument passed should be a string comprised of either 'eng', 'fr' or 'all' (or another language, would that be useful).
+     * First argument passed should be a string comprised of either 'en', 'fr' or 'all' (or another language, would that be useful).
      * All other arguments should be the name of the reports to include (string - case sensitive)
      * @return assoc_array, the $array_lang
      */
@@ -22,7 +22,7 @@ final class Lang implements Lang\AllReportNames{
      * Fetches the report's array and then merge it with the current array.
      * @param assoc_array $previous , the previous array
      * @param string $report , Name of the said report
-     * @param string $lang , Language parameter ('eng'|'fr'|'all')
+     * @param string $lang , Language parameter ('en'|'fr'|'all')
      * @return assoc_array, the current merged array
      */
     private static function getAndMergeFromReport($previous, $report, $lang){
@@ -36,12 +36,12 @@ final class Lang implements Lang\AllReportNames{
      * Assumes that the report name and the class name are the same, and that the methods getLangEn, getLangFr and getAll are implemented.
      * For non-default languages, the array is merged with the English array to avoid missing fields.
      * @param string $report , Name of the said report
-     * @param  string $lang , Language parameter ('eng'|'fr'|'all')
+     * @param  string $lang , Language parameter ('en'|'fr'|'all')
      * @return assoc_array, array from said report 
      * @throws Exception, If Reflection fails
      */
     private static function getArrayFromReport($report, $lang){
-        $path = $_SERVER['DOCUMENT_ROOT'] . 'civdev/lang/' . $report . '.lang.class.php';
+        $path = $report . '.lang.class.php';
         require_once $path;
         $array = [];
         $namespaced_report = "Lang\\" . $report;
@@ -53,7 +53,7 @@ final class Lang implements Lang\AllReportNames{
             case 'fr':
                 $obj = new $namespaced_report;
                 $array = $obj->getLangFr(); 
-                $default = $obj->getLangEng();
+                $default = $obj->getLangEn();
                 $array = self::mergeToDefault($default, $array);
                 break;
             case 'all':

@@ -1,6 +1,6 @@
 <?php
 namespace Lang;
-require_once $_SERVER['DOCUMENT_ROOT'] . '/civdev/lang/ParentLang.lang.class.php';
+require_once 'ParentLang.lang.class.php';
 final class TemplateReport extends ParentLang {
 
     public function __construct() {}

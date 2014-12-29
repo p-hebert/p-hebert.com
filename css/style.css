@@ -1,0 +1,266 @@
+
+/*-----GENERAL-----*/
+body{
+    min-height: 100%
+}
+
+ul {
+    list-style: none;
+}
+
+.vcenter {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.vcentered {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.full-height{
+    height:100%;
+}
+
+.half-height{
+    height:50%;
+}
+
+.table-display{
+    display:table;
+}
+
+.top {
+    position:relative;
+    top:0;
+}
+
+.bottom {
+    position: relative;
+    bottom:0;
+}
+
+.bottom-abs {
+    position: absolute;
+    bottom:0;
+}
+
+.bottom-cell {
+    display:table-cell;
+    vertical-align: bottom;
+}
+
+/*-----BOOTSTRAP-THEME EXTRACTS-----*/
+
+/*-----BOOTSTRAP MOD-----*/
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline-color: #f0f0f0;
+}
+
+.btn-default {
+  color: #4c4c4c;
+  font-family: CODE_bold;
+  padding-left:15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: transparent;
+  border-color: #4c4c4c;
+  border-radius: 2px;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active{
+  color: black;
+  background-color: #4c4c4c;
+  border-color: #4c4c4c;
+}
+
+.white.btn-default:hover,
+.white.btn-default:focus,
+.white.btn-default.focus,
+.white.btn-default:active,
+.white.btn-default.active{
+  color: white;
+}
+
+.close {
+    color: #4c4c4c;
+    text-shadow:none;
+    filter: none;
+    opacity:1;
+}
+.close:hover, 
+.close:focus {
+    color: #7f7f7f;
+    text-shadow:none;
+    filter: none;
+    opacity:1;
+}
+
+/*-----FONTS------*/
+@font-face {
+  font-family: 'CODE_light';
+
+  src: url('../fonts/CODE Light.otf');
+}
+
+@font-face {
+  font-family: 'CODE_bold';
+
+  src: url('../fonts/CODE Bold.otf');
+}
+
+/*-----HEADER-----*/
+header{
+    position: fixed;
+    top:0px;
+    right:0px;
+    z-index:1200;
+}
+
+header > span {
+    color: #4c4c4c;
+}
+
+header > span:hover {
+    color: #7f7f7f;
+}
+
+header > .option-invisible {
+    display:none;
+}
+
+header > .option-visible  {
+    display: inline-block;
+    vertical-align:middle;
+}
+
+header > form, header > span {
+    display: inline-block;
+    vertical-align:middle;
+}
+
+@media (max-width: 767px) {
+    header {
+        padding-left: 4%;
+        margin-top: 4%;
+        margin-bottom: 4%;
+        margin-right: 4%;
+    }
+    header .glyphicon-cog {
+        font-size: 36px;
+    }
+    .close {
+        font-size:36px;
+        line-height:36px;
+        vertical-align:middle;
+    }
+    header .close {
+        padding-left: 6px;
+    }
+}
+
+@media (min-width: 768px) {
+    header {
+        padding-left: 2%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        margin-right: 2%;
+    }
+    header .glyphicon-cog{
+        font-size: 36px;
+    }
+    .close {
+        font-size:28px;
+        vertical-align:top;
+        margin-top: -6px;
+    }
+    header .close {
+        padding-left: 12px;
+    }
+}
+
+/*-----INTRO-----*/
+
+#intro {
+    position: fixed;
+    top:0;
+    bottom:0;
+    margin:0;
+    width:100%;
+    z-index: 1100;
+    text-align:center;
+    color: #f0f0f0;
+    background-color: #000;
+}
+
+#intro-over{
+    font-family: CODE_bold;
+    letter-spacing:0.1em;
+    text-align:center;
+    padding-bottom:10px;
+}
+
+#intro-over sub{
+   font-size:1em;
+}
+
+#intro-below {
+    margin: 0 auto;
+    padding: 0;
+    font-family: CODE_bold;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: white;
+}
+
+#intro-below > li {
+    opacity:0;
+}
+
+#intro-below > #subtitle-trigger:hover{
+    cursor:pointer;
+}
+
+.border-bottom {
+    border-bottom: 1px solid;
+    border-bottom-color: #f0f0f0;
+}
+
+@media (max-width: 767px) {
+  #intro > div{
+    margin:0 auto;
+    width: 75%;
+  }
+  #intro-below > li{
+      display: block;
+  }
+}
+@media (min-width: 768px){
+  #intro > div {
+    margin:0 auto;
+    width: 480px;
+  }
+  
+  #intro-below > li{
+      padding-left: 0.5em;
+      display: inline-block;
+  }
+}
+
+
+
+
+
