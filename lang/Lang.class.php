@@ -11,7 +11,7 @@ final class Lang implements Lang\AllReportNames{
      * @return assoc_array, the $array_lang
      */
     public static function getArrayLang($lang, $args){
-        $array = [];//self::getArrayFromReport('CommonLang', $lang);
+        $array = array();//self::getArrayFromReport('CommonLang', $lang);
         for($i = 0; $i < count($args); $i++){
             $array = self::getAndMergeFromReport($array, $args[$i], $lang);
         }
@@ -43,7 +43,7 @@ final class Lang implements Lang\AllReportNames{
     private static function getArrayFromReport($report, $lang){
         $path = $report . '.lang.class.php';
         require_once $path;
-        $array = [];
+        $array = array();
         $namespaced_report = "Lang\\" . $report;
         switch($lang){
             case 'en':
