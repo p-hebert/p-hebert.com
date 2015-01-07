@@ -1,7 +1,7 @@
 <?php
 require_once 'session_module.php';
 require_once 'lang/Lang.class.php';
-$lang = Lang::getArrayLang($_SESSION['_LANG'], [Lang::CommonLang]);
+$lang = Lang::getArrayLang($_SESSION['_LANG'], array(Lang::CommonLang));
 ?>
 <!DOCTYPE html>
 <html>
