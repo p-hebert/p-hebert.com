@@ -39,10 +39,10 @@ namespace Lang;
         if(!isset($this->array_lang_fr)){
             $this->initEn();
         }
-        return [
+        return array(
                     'eng' => $this->array_lang_en,
                     'fr' => $this->array_lang_fr
-               ];
+               );
     }
     
     protected abstract function initEn();  
