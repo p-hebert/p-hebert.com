@@ -260,6 +260,34 @@ header > form, header > span {
   }
 }
 
+/*-----FOOTER-----*/
+footer{
+    z-index:1200;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    text-align: center;
+}
+
+footer > p {
+    color: #4c4c4c;
+    font-family: CODE_bold;
+    font-size: 1em;
+    vertical-align: middle;
+    letter-spacing: 0.2em;
+}
+
+footer > p > span {
+    vertical-align: middle;
+}
+
+.footer-bracket{
+    font-family: CODE_bold;
+    font-weight: bolder;
+    font-size: 2.5em;
+    padding:0 0.5em;
+}
+
 
 
 

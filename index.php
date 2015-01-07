@@ -16,6 +16,8 @@ $lang = Lang::getArrayLang($_SESSION['_LANG'], [Lang::CommonLang]);
         <?php 
             require_once "header.php"; 
             require_once "intro.php"; 
+            require_once "main.php";
+            require_once "footer.php";
         ?>
         
         <!-- Javascript -->
@@ -57,5 +59,6 @@ $lang = Lang::getArrayLang($_SESSION['_LANG'], [Lang::CommonLang]);
                 });
             });
         </script>
+        <script async src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r69/three.min.js'></script>
     </body>
 </html>

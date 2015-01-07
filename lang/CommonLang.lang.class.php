@@ -11,7 +11,8 @@ final class CommonLang extends ParentLang {
                                             "label-language" => "Language",
                                             "subtitle-intro-left" => "Think.",
                                             "subtitle-intro-middle" => "Explore.",
-                                            "subtitle-intro-right" => "Evolve."
+                                            "subtitle-intro-right" => "Evolve.",
+                                            "content-footer" => "Under Development"
                                         );
     }
     
@@ -21,7 +22,8 @@ final class CommonLang extends ParentLang {
                                             "label-language" => "Langue",
                                             "subtitle-intro-left" => "R&eacutefl&eacutechir",
                                             "subtitle-intro-middle" => "Explorer",
-                                            "subtitle-intro-right" => "&Eacutevoluer"
+                                            "subtitle-intro-right" => "&Eacutevoluer",
+                                            "content-footer" => "En d&eacuteveloppement"
                                         );
     }
 }
