@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "fontastic-p-hebert";
+  src:url("../fonts/fontastic-p-hebert.eot");
+  src:url("../fonts/fontastic-p-hebert.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/fontastic-p-hebert.woff") format("woff"),
+    url("../fonts/fontastic-p-hebert.ttf") format("truetype"),
+    url("../fonts/fontastic-p-hebert.svg#fontastic-p-hebert") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.fontastic{
+    font-family: "fontastic-p-hebert" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[data-icon]:before {
+  font-family: "fontastic-p-hebert" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="fontastic-"]:before,
+[class*=" fontastic-"]:before {
+  font-family: "fontastic-p-hebert" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fontastic-three-bars:before {
+  content: "0";
+}
+.fontastic-contact-email:before {
+  content: "@";
+}
+.fontastic-triangle-down:before {
+  content: "A";
+}
+.fontastic-triangle-left:before {
+  content: "B";
+}
+.fontastic-triangle-right:before {
+  content: "C";
+}
+.fontastic-triangle-up:before {
+  content: "D";
+}
+.fontastic-close:before {
+  content: "X";
+}
+.fontastic-list:before {
+  content: "1";
+}
+.fontastic-info:before {
+  content: "i";
+}
+.fontastic-social-github:before {
+  content: "a";
+}
+.fontastic-social-linkedin:before {
+  content: "d";
+}
+.fontastic-angle-down:before {
+  content: "E";
+}
+.fontastic-angle-left:before {
+  content: "F";
+}
+.fontastic-angle-right:before {
+  content: "G";
+}
+.fontastic-angle-up:before {
+  content: "H";
+}
+.fontastic-chevron-down:before {
+  content: "I";
+}
+.fontastic-chevron-left:before {
+  content: "J";
+}
+.fontastic-chevron-right:before {
+  content: "K";
+}
+.fontastic-chevron-up:before {
+  content: "L";
+}
+.fontastic-github-square:before {
+  content: "e";
+}
+.fontastic-google-plus:before {
+  content: "g";
+}
+.fontastic-quote-left:before {
+  content: "v";
+}
+.fontastic-quote-right:before {
+  content: "w";
+}
+.fontastic-twitter-square:before {
+  content: "b";
+}
+.fontastic-tumblr-square:before {
+  content: "t";
+}
+.fontastic-code:before {
+  content: "c";
+}
+.fontastic-down-open-big:before {
+  content: "M";
+}
+.fontastic-left-open-big:before {
+  content: "N";
+}
+.fontastic-right-open-big:before {
+  content: "O";
+}
+.fontastic-up-open-big:before {
+  content: "P";
+}
+.fontastic-dot:before {
+  content: "2";
+}
+.fontastic-dot-2:before {
+  content: "3";
+}
+.fontastic-dot-3:before {
+  content: "4";
+}

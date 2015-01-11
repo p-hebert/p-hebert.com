@@ -7,7 +7,10 @@ final class CommonLang extends ParentLang {
     
     protected function initEn() {
         $this->array_lang_en = array(
-                                            "title-index" => "pH Official Website",
+                                            "pagetitle-index" => "pH Official Website",
+                                            "title-contact" => "Contact me",
+                                            "title-github" => "GitHub",
+                                            "title-linkedin" => "linkedIn",
                                             "label-language" => "Language",
                                             "subtitle-intro-left" => "Think.",
                                             "subtitle-intro-middle" => "Explore.",
@@ -19,6 +22,7 @@ final class CommonLang extends ParentLang {
     protected function initFr() {
         $this->array_lang_fr = array(
                                             "title-index" => "pH - Site officiel",
+                                            "title-contact" => "Contact",
                                             "label-language" => "Langue",
                                             "subtitle-intro-left" => "R&eacutefl&eacutechir",
                                             "subtitle-intro-middle" => "Explorer",

@@ -8,6 +8,19 @@ ul {
     list-style: none;
 }
 
+.downarrow {
+    /*see http://stackoverflow.com/questions/4861224/how-to-use-css-to-surround-a-number-with-a-circle*/
+    font: 34px Arial, sans-serif;
+    border-radius:50%;
+    behavior: url(PIE.htc);
+    width:44px;
+    height:44px;
+    vertical-align:middle;
+    border: 1px solid #f0f0f0;
+    color: #f0f0f0;
+    text-align: center;
+}
+
 .vcenter {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -28,26 +41,15 @@ ul {
     height:50%;
 }
 
-.table-display{
+.display-none{
+    display:none;
+}
+
+.display-table{
     display:table;
 }
 
-.top {
-    position:relative;
-    top:0;
-}
-
-.bottom {
-    position: relative;
-    bottom:0;
-}
-
-.bottom-abs {
-    position: absolute;
-    bottom:0;
-}
-
-.bottom-cell {
+.display-bottom-cell {
     display:table-cell;
     vertical-align: bottom;
 }
@@ -123,72 +125,58 @@ ul {
 }
 
 /*-----HEADER-----*/
-header{
+.header-intro, .header-main{
     position: fixed;
     top:0px;
     right:0px;
     z-index:1200;
 }
 
-header > span {
+.header-main{
+    z-index:900;
+}
+
+.header-intro form {
+    display: inline-block;
+    vertical-align:middle;
+}
+
+.header-main > ul{
+    margin-bottom: 0;
+    line-height:34px;
+}
+
+.header-main > ul > li {
+    display:inline-block;
+    vertical-align: middle;
+}
+
+.header-main a:hover {
+    text-decoration:none;
+}
+
+.header-main [class^="fontastic-"] {
+    font-size: 34px;
     color: #4c4c4c;
+    vertical-align: bottom;
+    margin-bottom: - 10px;
 }
 
-header > span:hover {
-    color: #7f7f7f;
+.header-main [class^="fontastic-"]:hover {
+    font-size: 34px;
+    text-decoration: none;
 }
 
-header > .option-invisible {
-    display:none;
-}
-
-header > .option-visible  {
-    display: inline-block;
-    vertical-align:middle;
-}
-
-header > form, header > span {
-    display: inline-block;
-    vertical-align:middle;
-}
 
 @media (max-width: 767px) {
-    header {
-        padding-left: 4%;
-        margin-top: 4%;
-        margin-bottom: 4%;
-        margin-right: 4%;
-    }
-    header .glyphicon-cog {
-        font-size: 36px;
-    }
-    .close {
-        font-size:36px;
-        line-height:36px;
-        vertical-align:middle;
-    }
-    header .close {
-        padding-left: 6px;
-    }
+    .header-intro, .header-main {
+        margin:4%;
+    }   
 }
 
 @media (min-width: 768px) {
-    header {
-        padding-left: 2%;
-        margin-top: 2%;
-        margin-bottom: 2%;
-        margin-right: 2%;
-    }
-    header .glyphicon-cog{
-        font-size: 36px;
-    }
-    .close {
-        font-size:28px;
-        vertical-align:top;
-        margin-top: -6px;
-    }
-    header .close {
-        padding-left: 12px;
+    .header-intro, .header-main {
+        margin:2%;    
     }
 }
 
@@ -230,8 +218,9 @@ header > form, header > span {
     opacity:0;
 }
 
-#intro-below > #subtitle-trigger:hover{
+#intro-below > .intro-trigger:hover{
     cursor:pointer;
+    
 }
 
 .border-bottom {
@@ -258,6 +247,87 @@ header > form, header > span {
       padding-left: 0.5em;
       display: inline-block;
   }
+}
+
+/*-----MAIN------*/
+
+article {
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 800;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+    
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    background: url('../images/dummy_poly.png') no-repeat center;
+    background-size: auto 50% ;
+    -webkit-filter: grayscale(100%);
+    
+}
+
+#nav-container {
+    text-align:center;
+}
+
+#nav-container > div {
+    padding: 0;
+    border-right: 1px solid #4c4c4c;
+}
+
+#nav-container > ul {
+    margin-left:-1px;
+    padding:0px;
+}
+
+#nav-container > ul > li > span {
+    margin-left:32px;
+}
+
+#nav-container > ul > .active {
+    border-left: 1px solid #fff; 
+}
+
+#nav-container > ul > .active > span {
+    border-top: 1px solid #4c4c4c;
+    border-bottom: 1px solid #4c4c4c;
+}
+
+#nav-button{
+    display:table-cell;
+    vertical-align: middle;
+}
+
+#nav-button > li > .fontastic{
+    font-size: 64px; 
+}
+
+#nav-navbar {
+    padding-left: 32px;
+}
+
+
+@media (max-width: 767px) {
+    #nav-container {
+        display:none;
+    }
+}
+@media (min-width: 768px){
+    #nav-container {
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:1;
+    }
+    
 }
 
 /*-----FOOTER-----*/
