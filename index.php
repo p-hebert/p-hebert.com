@@ -37,10 +37,15 @@ $lang = Lang::getArrayLang($_SESSION['_LANG'], array(Lang::CommonLang));
                     }
                 }
             }
+            function navClick(){
+                var id = $(this).attr('id');
+                
+            }
         </script>
         <script>
             $(document).ready(function(){
-                window.intro = true;                
+                window.intro = true;
+                window.navId = "nav-home";
                 $('#intro-below').children('li').each(function(i){
                     if($(this).attr('class') === 'intro-trigger'){
                         $(this).delay((i++)*750).fadeTo(1000, 0.5);
@@ -52,7 +57,22 @@ $lang = Lang::getArrayLang($_SESSION['_LANG'], array(Lang::CommonLang));
                 $('.intro-trigger').click(function(){
                     $('#intro').fadeOut();
                     window.intro = false;
-                    $('.option-menu-lang').find('button').addClass('white');
+                    $('#main-menu-lang').find('button').addClass('white');
+                });
+                
+                $('#navbar-trigger').click(function(){
+                    $('#nav-button').fadeOut();
+                    $('#nav-navbar').fadeIn();
+                });
+                
+                $('#nav-navbar').find('li').each(function(){
+                    console.log(this);
+                    $(this).click(function(){
+                        console.log('#'. window.navId);
+                        $('#'. window.navId).removeClass('active');
+                        $(this).addClass('active');
+                        navId = $(this).attr('id');
+                    });
                 });
             });
         </script>

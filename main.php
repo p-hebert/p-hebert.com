@@ -1,14 +1,17 @@
 <article class="full-height row">
     <nav id="nav-container" class="full-height row col-sm-3">
-        <div class="col-sm-4 full-height"></div>
+        <div id="nav-left-spacer" class="col-sm-4 full-height"></div>
         <ul id="nav-button" class="col-sm-8 full-height vcenter">
-            <li class="vcentered active"><span class="fontastic">0</span></li>
+            <li class="vcentered active"><div id="navbar-trigger" class="fontastic">0</div></li>
         </ul>
-        <ul id="nav-navbar" class="col-sm-8 full-height display-none">
-            <li>Projects</li>
-            <li>Passions</li>
-            <li>Close</li>
-        </ul>
+        <div id="nav-navbar" class="col-sm-8 full-height vcenter display-none">
+            <ul class="vcentered">
+                <li id="nav-home" class="active"><div>Home</div></li>
+                <li id="nav-projects"><div>Projects</div></li>
+                <li id="nav-passion"><div>Passions</div></li>
+                <li id="nav-close"><div>Close</div></li>
+            </ul>
+        </div>
     </nav>
     <section>
     </section>

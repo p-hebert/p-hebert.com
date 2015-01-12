@@ -1,7 +1,7 @@
 
 /*-----GENERAL-----*/
 body{
-    min-height: 100%
+    min-height: 100%;
 }
 
 ul {
@@ -143,7 +143,7 @@ ul {
 
 .header-main > ul{
     margin-bottom: 0;
-    line-height:34px;
+    line-height:30px;
 }
 
 .header-main > ul > li {
@@ -155,14 +155,13 @@ ul {
     text-decoration:none;
 }
 
-.header-main [class^="fontastic-"] {
-    font-size: 34px;
+.header-main .fontastic {
+    font-size: 30px;
     color: #4c4c4c;
     vertical-align: bottom;
-    margin-bottom: - 10px;
 }
 
-.header-main [class^="fontastic-"]:hover {
+.header-main .fontastic:hover {
     font-size: 34px;
     text-decoration: none;
 }
@@ -260,7 +259,7 @@ article {
     margin: 0;
     padding: 0;
     background-color: lightgray;
-    
+    overflow:hidden;
 }
 
 canvas {
@@ -274,60 +273,81 @@ canvas {
     
 }
 
+/*-----NAV-----*/
+
 #nav-container {
-    text-align:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1; 
+    color: #7f7f7f;
 }
 
 #nav-container > div {
-    padding: 0;
-    border-right: 1px solid #4c4c4c;
+    padding:0;
 }
 
-#nav-container > ul {
+#nav-container > #nav-left-spacer {
+    max-width: 80px;
+    border-right: 1px solid #7f7f7f;
+}
+
+#nav-container ul {
     margin-left:-1px;
+    max-width: 160px;
     padding:0px;
 }
 
-#nav-container > ul > li > span {
+#nav-container ul > li > div {
+    cursor: pointer;
     margin-left:32px;
+    width:100%;
 }
 
-#nav-container > ul > .active {
+#nav-container ul > .active {
     border-left: 1px solid #fff; 
 }
 
-#nav-container > ul > .active > span {
-    border-top: 1px solid #4c4c4c;
-    border-bottom: 1px solid #4c4c4c;
+#nav-container ul > .active > div {
+    border-top: 1px solid #7f7f7f;
+    border-bottom: 1px solid #7f7f7f;
 }
 
 #nav-button{
-    display:table-cell;
-    vertical-align: middle;
+    text-align: center;
 }
 
-#nav-button > li > .fontastic{
-    font-size: 64px; 
+#nav-button > .active > div{
+    font-size: 64px;
+    line-height:100px;
+    padding:16px 0 16px 0;
+    color: #4c4c4c;
 }
 
-#nav-navbar {
-    padding-left: 32px;
+#nav-navbar{
+    font-family: CODE_bold;
+    letter-spacing: 0.1em;    
 }
 
+#nav-navbar > ul > li > div {
+    margin-bottom:20px;
+}
+
+#nav-navbar > ul > .active > div {
+    font-size: 32px;
+    line-height:50px;
+    padding:8px 0 8px 0;
+    margin-bottom:40px;
+}
+
+#nav-navbar #nav-close{
+    color: #4c4c4c;
+}
 
 @media (max-width: 767px) {
     #nav-container {
         display:none;
     }
-}
-@media (min-width: 768px){
-    #nav-container {
-        position:fixed;
-        top:0;
-        left:0;
-        z-index:1;
-    }
-    
 }
 
 /*-----FOOTER-----*/

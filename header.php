@@ -2,17 +2,17 @@
     <ul>    
         <li class="landscape-only">
             <a href="" title="<?= $lang['title-contact']?>">
-                <span class="fontastic-contact-email"></span>
+                <span class="fontastic">@</span>
             </a>
         </li>
         <li class="landscape-only">
             <a href="https://github.com/p-hebert" title="<?= $lang['title-github']?>">
-                <span class="fontastic-social-github"></span>
+                <span class="fontastic">a</span>
             </a>
         </li>
         <li class="landscape-only">
             <a href="https://linkedin.com/in/profile4phebert" title="<?= $lang['title-linkedin']?>" >
-                <span class="fontastic-social-linkedin"></span>
+                <span class="fontastic">d</span>
             </a>
         </li>
         <li>
