@@ -1,4 +1,4 @@
-<div id='intro' class="full-height">
+<div id='intro' class="fadeout-intro full-height">
     <header class="header-intro">
         <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" name="intro-lang" method="post" id="intro-menu-lang" class="btn-group option-visible" role="group" aria-label="<?= $lang['label-language'] ?>">
             <input type="hidden" name='lang-hidden' id='intro-lang-hidden' value="<?= $_SESSION['_LANG']; ?>">

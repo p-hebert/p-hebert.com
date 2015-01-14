@@ -54,6 +54,17 @@ ul {
     vertical-align: bottom;
 }
 
+/*-----FONTS------*/
+@font-face {
+  font-family: 'CODE_light';
+  src: url('../fonts/CODE Light.otf');
+}
+
+@font-face {
+  font-family: 'CODE_bold';
+  src: url('../fonts/CODE Bold.otf');
+}
+
 /*-----BOOTSTRAP-THEME EXTRACTS-----*/
 
 /*-----BOOTSTRAP MOD-----*/
@@ -109,19 +120,6 @@ ul {
     text-shadow:none;
     filter: none;
     opacity:1;
-}
-
-/*-----FONTS------*/
-@font-face {
-  font-family: 'CODE_light';
-
-  src: url('../fonts/CODE Light.otf');
-}
-
-@font-face {
-  font-family: 'CODE_bold';
-
-  src: url('../fonts/CODE Bold.otf');
 }
 
 /*-----HEADER-----*/
@@ -273,6 +271,24 @@ canvas {
     
 }
 
+section {
+    height:40%;
+    margin-right: -75%;
+    background-color:rgba(0,0,0,0.5);
+}
+
+@media (min-width: 768px){
+    section{
+        float:right!important;
+    }
+}
+
+@media screen and (min-aspect-ratio: 16/9){
+    section{
+        height:60%;
+    }
+}
+
 /*-----NAV-----*/
 
 #nav-container {
@@ -305,7 +321,10 @@ canvas {
 }
 
 #nav-container ul > .active {
-    border-left: 1px solid #fff; 
+    border-left: 1px solid #fff;
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
 }
 
 #nav-container ul > .active > div {
@@ -334,9 +353,9 @@ canvas {
 }
 
 #nav-navbar > ul > .active > div {
-    font-size: 32px;
-    line-height:50px;
-    padding:8px 0 8px 0;
+    font-size: 18px;
+    line-height:36px;
+    padding:8px 0 8px 16px;
     margin-bottom:40px;
 }
 
@@ -344,9 +363,21 @@ canvas {
     color: #4c4c4c;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px), handheld and (orientation:portrait) {
     #nav-container {
         display:none;
+    }
+}
+
+@media (max-width: 992px) {
+    #nav-navbar > ul > .active > div {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1199px) {
+    #nav-container ul > li > div {
+        width: 66.66667%;
     }
 }
 

@@ -1,5 +1,4 @@
 <?php
-/*display-none on icons*/
 require_once 'session_module.php';
 require_once 'lang/Lang.class.php';
 $lang = Lang::getArrayLang($_SESSION['_LANG'], array(Lang::CommonLang));
@@ -23,8 +22,21 @@ $lang = Lang::getArrayLang($_SESSION['_LANG'], array(Lang::CommonLang));
         ?>
         
         <!-- Javascript -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!--commented out for dev on slow connection <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
         <script>
+            if (!window.jQuery) {
+                document.write('<script type="text/javascript" src="js/jquery-2.1.3.min.js"><\/script>'); 
+            }
+        </script>
+        <script>
+            window.onresize = function(){
+                if(window.innerwidth > 767 && intro){
+                    $('footer').css({'text-align':'left', 'margin-left':'82px'});
+                }else if(intro){
+                    $('footer').css({'text-align':'center', 'margin-left':0});
+                }
+            }
+            
             function langSubmit(lang){
                 var value = $('#lang-hidden').val();
                 if(lang !== value){
@@ -37,15 +49,31 @@ $lang = Lang::getArrayLang($_SESSION['_LANG'], array(Lang::CommonLang));
                     }
                 }
             }
-            function navClick(){
-                var id = $(this).attr('id');
-                
+            
+            function navHover(id){
+                changeLetters(id);
+            }
+            
+            function changeLetters(id){
+                var $this = $('#'+ id).children('div');
+                var characters = '0123456789ABCDEF';
+                var text = $this.html();
+                var i = Math.floor(text.length * Math.random());
+                var j = Math.floor(characters.length * Math.random());
+                text = text.substring(0,i) + characters.charAt(j) + text.substring(i+1);
+                $this.html(text);
             }
         </script>
         <script>
+            var intervalID;
+            var navID;
+            var intro = true;
+            
             $(document).ready(function(){
-                window.intro = true;
-                window.navId = "nav-home";
+                /*Cosmetic part, setting up for the grand show*/
+                $('#nav-home').children('div').css({'padding-left':0});
+                
+                /*Time for the grand Entrance!*/
                 $('#intro-below').children('li').each(function(i){
                     if($(this).attr('class') === 'intro-trigger'){
                         $(this).delay((i++)*750).fadeTo(1000, 0.5);
@@ -54,9 +82,20 @@ $lang = Lang::getArrayLang($_SESSION['_LANG'], array(Lang::CommonLang));
                     }
                 });
                 
+                /*Welcome the main act of this piece, you will be delighted by how our actors play their roles*/
                 $('.intro-trigger').click(function(){
-                    $('#intro').fadeOut();
-                    window.intro = false;
+                    if(window.innerWidth > 992) {
+                        $('.fadeout-intro').fadeOut();
+                    }else{
+                        $('#intro').fadeOut();
+                    }
+                    intro = false;
+                    setTimeout(function(){
+                        if(window.innerWidth > 992) {
+                            $('footer').css({'text-align':'left', 'margin-left':'82px'});
+                        }
+                        $('.fadein-main').fadeIn();
+                    }, 500);
                     $('#main-menu-lang').find('button').addClass('white');
                 });
                 
@@ -65,13 +104,46 @@ $lang = Lang::getArrayLang($_SESSION['_LANG'], array(Lang::CommonLang));
                     $('#nav-navbar').fadeIn();
                 });
                 
+                $('#nav-close').click(function(){
+                    $('#nav-navbar').fadeOut();
+                    $('#nav-button').fadeIn();       
+                });
+                
                 $('#nav-navbar').find('li').each(function(){
-                    console.log(this);
-                    $(this).click(function(){
-                        console.log('#'. window.navId);
-                        $('#'. window.navId).removeClass('active');
-                        $(this).addClass('active');
-                        navId = $(this).attr('id');
+                    if($(this).attr('id') !== 'nav-close'){
+                        $(this).click(function(){
+                            if($(this).hasClass('inactive')){
+                                $('#nav-navbar').find('li').each(function(){
+                                    if($(this).hasClass('active')){
+                                        $(this).removeClass('active');
+                                        $(this).children('div').removeAttr('style');
+                                        $(this).addClass('inactive');
+                                        if($(this).attr('id') !== 'nav-home'){
+                                            $('section').animate({'margin-right':'-75%'},500);
+                                        }
+                                    }
+                                });
+                                $(this).removeClass('inactive');
+                                $(this).addClass('active');
+                                $(this).children('div').animate({'padding-left':0}, 200);
+                                if($(this).attr('id') !== 'nav-home'){
+                                    $('section').animate({'margin-right':0},500);
+                                }
+                            }
+                        });
+                    }
+                    /*Cunning!*/
+                    $(this).children('div').on('mouseenter', function(){
+                        navID = $(this).parent().attr('id');
+                        intervalID = setInterval(function(){
+                            navHover(navID);
+                        }, 100);
+                    });
+                    /*Such acting!*/
+                    $(this).children('div').on('mouseleave', function(){
+                        clearInterval(intervalID);
+                        var html = $(this).data('content');
+                        $(this).html(html);
                     });
                 });
             });
