@@ -8,6 +8,7 @@ $lang = Lang::getArrayLang($_SESSION['_LANG'], array(Lang::CommonLang));
     <head>
         <meta charset="utf-8"/>
 	<meta name="author" content="Philippe Hebert"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <title><?= $lang['pagetitle-index'] ?></title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/fontastic-p-hebert.css">
